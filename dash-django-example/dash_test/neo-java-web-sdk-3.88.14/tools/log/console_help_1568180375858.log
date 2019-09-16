@@ -1,0 +1,6 @@
+2019-09-11 11:09:37,932 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   
+2019-09-11 11:09:41,239 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [help]
+2019-09-11 11:09:41,239 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [help] init() finished for [0] ms
+2019-09-11 11:09:41,677 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [help] run() finished for [438] ms
+2019-09-11 11:09:41,677 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [help] cleanup() finished for [0] ms
+2019-09-11 11:09:41,677 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [help] finished successfully for [438] ms

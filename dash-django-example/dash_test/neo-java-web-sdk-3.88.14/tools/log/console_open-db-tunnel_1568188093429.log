@@ -1,0 +1,31 @@
+2019-09-11 13:18:14,277 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a p2000519762trial -h hanatrial.ondemand.com -u urmilesh786@gmail.com -i system1
+2019-09-11 13:18:16,774 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2019-09-11 13:18:17,322 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: No SDK status file for your configuration was found. Creating a new status file...
+2019-09-11 13:18:18,478 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check was not successful. This should not affect the command's execution
+2019-09-11 13:18:18,478 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [1704] ms
+2019-09-11 13:18:37,562 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.3.0)
+2019-09-11 13:18:57,327 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2019-09-11 13:18:57,339 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR: Login failed. Contact your administrator.
+com.sap.jpaas.infrastructure.console.exception.SecurityException: Login failed. Contact your administrator.
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:207)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)
+Caused by: com.sap.core.utils.infrastructure.validation.AuthenticationException: Login failed. Contact your administrator.
+	at com.sap.core.utils.infrastructure.validation.LandscapeHostValidator.validateHttpResponseStatus(LandscapeHostValidator.java:437)
+	at com.sap.core.utils.infrastructure.validation.HttpResponseValidator.process(HttpResponseValidator.java:36)
+	at org.apache.http.protocol.ImmutableHttpProcessor.process(ImmutableHttpProcessor.java:139)
+	at org.apache.http.protocol.HttpRequestExecutor.postProcess(HttpRequestExecutor.java:308)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:495)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:68)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:185)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:146)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:243)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:185)
+	... 1 more

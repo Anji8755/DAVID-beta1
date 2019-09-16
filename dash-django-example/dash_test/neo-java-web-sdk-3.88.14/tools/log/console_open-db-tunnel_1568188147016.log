@@ -1,0 +1,50 @@
+2019-09-11 13:19:07,696 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Arguments:   -a p2000519762trial -h hanatrial.ondemand.com -u urmilesh786@gmail.com -i system1
+2019-09-11 13:19:09,997 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Starting execution of command [open-db-tunnel]
+2019-09-11 13:19:10,533 INFO  [pool-2-thread-1] com.sap.jpaas.infrastructure.console.ConsoleLogger: No SDK status file for your configuration was found. Creating a new status file...
+2019-09-11 13:19:13,022 ERROR [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity status could not be obtained within 3 seconds. This should not affect the command's execution.
+2019-09-11 13:19:19,171 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Version validity check was not successful. This should not affect the command's execution
+2019-09-11 13:19:19,171 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] init() finished for [9174] ms
+2019-09-11 13:19:32,583 INFO  [main] com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor: CommandTunnelRequestExecutor.executeRequest() called for command [open-db-tunnel] (version: 1.3.0)
+2019-09-11 13:21:12,292 INFO  [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: Command [open-db-tunnel] cleanup() finished for [0] ms
+2019-09-11 13:21:12,308 FATAL [main] com.sap.jpaas.infrastructure.console.ConsoleLogger: (!) ERROR; Could not connect to host: https://services.hanatrial.ondemand.com/services/v1/instances/p2000519762trial/persistence/v3/dbtunnel/schemaId/system1. Make sure your proxy settings are correct
+com.sap.jpaas.infrastructure.console.exception.ValidationException
+	at com.sap.core.tunnelcommands.framework.executor.HttpClientProvider.createClientWithBasicAuthentication(HttpClientProvider.java:43)
+	at com.sap.core.tunnelcommands.framework.executor.HttpClientProvider.createClientWithBasicAuth(HttpClientProvider.java:33)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.getClientWithBasicAuth(CommandTunnelRequestExecutor.java:160)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:59)
+	at com.sap.core.tunnelcommands.framework.executor.CommandTunnelRequestExecutor.executeRequest(CommandTunnelRequestExecutor.java:47)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.performOpenTunnelRequest(CommandTunnelHandler.java:263)
+	at com.sap.core.persistence.commands.tunnel.api.CommandTunnelHandler.openTunnel(CommandTunnelHandler.java:133)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.openTunnelInShellProcess(OpenDbTunnelCommand.java:197)
+	at com.sap.core.persistence.commands.tunnel.OpenDbTunnelCommand.run(OpenDbTunnelCommand.java:135)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:185)
+	at com.sap.jpaas.infrastructure.console.CommandManager.run(CommandManager.java:146)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.executeCommand(ConsoleClient.java:243)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.run(ConsoleClient.java:185)
+	at com.sap.jpaas.infrastructure.console.ConsoleClient.main(ConsoleClient.java:80)
+Caused by: com.sap.core.utils.infrastructure.validation.HostValidationException: java.net.ConnectException: Connection timed out: connect
+	at com.sap.core.utils.infrastructure.validation.LandscapeHostValidator.getHttpClient(LandscapeHostValidator.java:376)
+	at com.sap.core.tunnelcommands.framework.executor.HttpClientProvider.createClientWithBasicAuthentication(HttpClientProvider.java:40)
+	... 13 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:524)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:403)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:177)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:115)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at com.sap.core.utils.infrastructure.validation.LandscapeHostValidator.getHttpClient(LandscapeHostValidator.java:348)
+	... 14 more

@@ -1,0 +1,10 @@
+# External JavaDoc URLs per JAR
+chemistry-opencmis-client-api-1.0.0.jar = https://chemistry.apache.org/java/1.0.0/maven/apidocs/
+chemistry-opencmis-commons-api-1.0.0.jar = https://chemistry.apache.org/java/1.0.0/maven/apidocs/
+javax.annotation-3.1-b41.jar = https://docs.oracle.com/javaee/7/api/
+javax.el-api-3.0.0.jar = https://docs.oracle.com/javaee/7/api/
+javax.mail-api-1.5.5.jar = https://docs.oracle.com/javaee/7/api/
+javax.servlet-api-3.1.0.jar = https://docs.oracle.com/javaee/7/api/
+javax.servlet.jsp-api-2.3.1.jar = https://docs.oracle.com/javaee/7/api/
+javax.websocket-api-1.1.jar = https://docs.oracle.com/javaee/7/api/
+slf4j-api-1.7.19.jar = https://www.slf4j.org/apidocs/
