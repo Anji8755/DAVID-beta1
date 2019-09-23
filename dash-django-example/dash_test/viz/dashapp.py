@@ -1,7 +1,7 @@
 from dash.dependencies import Output, Input,State
 import PyPDF2
 #import textract
-import xlrd
+#import xlrd
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import dash_core_components as dcc
